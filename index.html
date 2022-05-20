@@ -4,18 +4,22 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.25.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.10.0"></script>
     <title>Leaderboard</title>
   </head>
   <body class="body">
+    <div id="tsparticles" class=".fade-out"></div>
     <header>
       <h1 class="heading">CAPTURE THE FLAG (CTF) CHALLENGE</h1>
       <h2 class="subHeading">Brought to you by 
         <img class="logo-img" src="assets/csaLogo_transparent.png" alt="CSA"/>
       </h2>
     </header>
-    <iframe src="iframes/leaderboard.html" name="leaderboard" title="leaderboard" class="lframe"></iframe>
+    <iframe src="leaderboard.html" name="leaderboard" title="leaderboard" class="lframe"></iframe>
+    <script src="js/confetti.js"></script>
   </body>
 </html>
 
