@@ -82,7 +82,7 @@ function loadLeaderboard(placings) {
 window.setInterval(function () {
   let leaderboardFile = new XMLHttpRequest();
   let url = window.location.origin; //"http://localhost:5500/";
-  leaderboardFile.open("GET", `${url}/leaderboard.txt`, true);
+  leaderboardFile.open("GET", `${url}/leaderboard.json`, true);
   leaderboardFile.send();
   leaderboardFile.onreadystatechange = function () {
     if (leaderboardFile.readyState == 4) {
