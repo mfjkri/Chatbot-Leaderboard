@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="180" />
+    <!-- <meta http-equiv="refresh" content="180" /> -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="styles/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,13 +13,17 @@
     <title>Leaderboard</title>
   </head>
   <body class="body">
-    <div id="tsparticles" class=".fade-out"></div>
+    <div id="tsparticles" class=".fade-out hide"></div>
     <header>
       <h1 class="heading">CAPTURE THE FLAG (CTF) CHALLENGE</h1>
       <h2 class="subHeading">
         Brought to you by
         <img class="logo-img" src="assets/csaLogo_transparent.png" alt="CSA" />
       </h2>
+      <h2 class="subHeading timerString hide" id="timerLabel">
+        Time left: <label class ="timerDigits">00:00</label></class>
+      </h2>
+      <button class="start-timer" id="start-button">Start</button>
     </header>
     <ul class="rank-list" id="rank-list"></ul>
     <img class="loader hide" src="../assets/loader.svg" />

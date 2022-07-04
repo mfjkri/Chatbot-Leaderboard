@@ -1,213 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    animation: gradient 20s ease infinite;
-    margin: 0;
-    text-align: center;
-    transition: linear-gradient 3s;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  animation: gradient 20s ease infinite;
+  margin: 0;
+  text-align: center;
+  transition: linear-gradient 3s;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 header {
-    color: rgba(36, 36, 36, 0.808);
-    transition: color 1s;
+  color: rgba(36, 36, 36, 0.808);
+  transition: color 1s;
 }
 
 h2 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 h1 {
-    justify-content: center;
+  justify-content: center;
 }
 
-iframe { 
-    width: 80vw;
-    height: 100vh;
-    background: transparent;
-    border: none;
+iframe {
+  width: 80vw;
+  height: 100vh;
+  background: transparent;
+  border: none;
 }
-
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .body {
-    background: linear-gradient(
-        -45deg,
-        rgba(110, 110, 110, 0.6),
-        rgb(255, 255, 255),
-        rgba(110, 110, 110, 0.6)
-    );
-    background-size: 1000rem 1000rem;
+  background: linear-gradient(
+    -45deg,
+    rgba(110, 110, 110, 0.6),
+    rgb(255, 255, 255),
+    rgba(110, 110, 110, 0.6)
+  );
+  background-size: 1000rem 1000rem;
 }
 
 .heading {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-top: 5vh;
-    font-size: 6vh;
-    font-weight: bold;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-top: 5vh;
+  font-size: 6vh;
+  font-weight: bold;
 }
 
 .subHeading {
-    padding-top: 1vh;
-    font-size: 4.5vh;
-    font-family: 'Proza Libre', sans-serif;
+  padding-top: 1vh;
+  font-size: 4.5vh;
+  font-family: "Proza Libre", sans-serif;
+}
+
+.timerString {
+  color: #1100ff;
+}
+
+.timerDigits {
+  /* color: #1100ff; */
+  color: #ff0000;
 }
 
 .pausedText {
-    align-content: center;
-    vertical-align: middle;
-    padding-top: 20vh;
-    font-size: 5vh;
-    font-family: 'Proza Libre', sans-serif;
-    font-weight: bold;
+  align-content: center;
+  vertical-align: middle;
+  padding-top: 20vh;
+  font-size: 5vh;
+  font-family: "Proza Libre", sans-serif;
+  font-weight: bold;
 }
 
-.logo-img{
-    width: 20vh;
-    vertical-align: middle;
+.start-timer {
+  border-radius: 20%;
+  padding: 0.5vh;
+  font-size: medium;
+}
+
+.logo-img {
+  width: 20vh;
+  vertical-align: middle;
 }
 
 @keyframes textclip {
-    to {
-        background-position: 200% center;
-    }
+  to {
+    background-position: 200% center;
+  }
 }
 
 .textAnimation {
-    color: #fff;
-    font-size: inherit;
-    font-weight: bold;
-    background: linear-gradient(to right, #ff0000 10%, #1100ff 50%, #ffffff 100%);
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 1s linear infinite;
+  color: #fff;
+  font-size: inherit;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff0000 10%, #1100ff 50%, #ffffff 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
 }
-
 
 /* Leaderboard stuff */
 
 .rank-list {
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5vh;
-    margin-bottom: 2vh;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
 }
 
 .user {
-    font-size: 3.5vh;
-    padding: 0 10vh;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 5% 75% 20%;
-    height: 10vh;
-    width: 80%;
-    background: linear-gradient(
-        0deg,
-        rgb(153, 153, 153),
-        rgb(143, 143, 143),
-        rgb(153, 153, 153)
-    );
-    border-radius: 15vh;
-    border-color: black;
-    margin: 1vh 0;
-    align-items: center;
+  font-size: 3.5vh;
+  padding: 0 10vh;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 5% 75% 20%;
+  height: 10vh;
+  width: 80%;
+  background: linear-gradient(
+    0deg,
+    rgb(153, 153, 153),
+    rgb(143, 143, 143),
+    rgb(153, 153, 153)
+  );
+  border-radius: 15vh;
+  border-color: black;
+  margin: 1vh 0;
+  align-items: center;
 }
 
 .first {
-    background: linear-gradient(
-        0deg,
-        rgb(255, 186, 0),
-        rgb(255, 176, 0),
-        rgb(255, 186, 0)
-    );
+  background: linear-gradient(
+    0deg,
+    rgb(255, 186, 0),
+    rgb(255, 176, 0),
+    rgb(255, 186, 0)
+  );
 }
 
 .second {
-    background: linear-gradient(
-        0deg,
-        rgb(220, 220, 220),
-        rgb(200, 200, 200),
-        rgb(220, 220, 220)
-    );
+  background: linear-gradient(
+    0deg,
+    rgb(220, 220, 220),
+    rgb(200, 200, 200),
+    rgb(220, 220, 220)
+  );
 }
 
 .third {
-    background: linear-gradient(
-        0deg,
-        rgb(200, 110, 0),
-        rgb(190, 90, 0),
-        rgb(200, 110, 0)
-    );
+  background: linear-gradient(
+    0deg,
+    rgb(200, 110, 0),
+    rgb(190, 90, 0),
+    rgb(200, 110, 0)
+  );
 }
 
 .medal {
-    font-size: 5vh;
+  font-size: 5vh;
 }
 
 .rank {
-    display: grid;
-    justify-self: center;
-    justify-items: center;
-    align-self: center;
-    text-align: center;
-    font-weight: bold;
-    margin-left: 1vh;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  align-self: center;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 1vh;
 }
 
 .username {
-    margin-left: 1vh;
-    text-align: left;
-    font-weight: bold;
-    font-size: inherit;
+  margin-left: 1vh;
+  text-align: left;
+  font-weight: bold;
+  font-size: inherit;
 }
 
 .points {
-    justify-self: flex-end;
-    font-weight: bold;
-    font-size: inherit;
+  justify-self: flex-end;
+  font-weight: bold;
+  font-size: inherit;
 }
 
-
 .zoom {
-    transition: transform 0.2s;
+  transition: transform 0.2s;
 }
 
 .zoom:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .loader {
-    height: 10vh;
-    width: 10vh;
-    margin-bottom: 30px;
-    color: rgba(190, 190, 190, 0.5)
+  height: 10vh;
+  width: 10vh;
+  margin-bottom: 30px;
+  color: rgba(190, 190, 190, 0.5);
 }
 
 #tsparticles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

@@ -79,7 +79,7 @@ function loadLeaderboard(placings) {
   });
 }
 
-window.setInterval(function () {
+function updateLeaderboard() {
   let leaderboardFile = new XMLHttpRequest();
   let url = window.location.origin; //"http://localhost:5500/";
   leaderboardFile.open("GET", `${url}/leaderboard.json`, true);
@@ -94,7 +94,7 @@ window.setInterval(function () {
           currentDate.getMinutes() +
           ":" +
           currentDate.getSeconds();
-        console.log(time, `loaded ${url}/leaderboard.txt`);
+        // console.log(time, `loaded ${url}/leaderboard.txt`);
         const leaderboardString = leaderboardFile.responseText;
 
         if (lastLeaderboardString != leaderboardString) {
@@ -122,4 +122,41 @@ window.setInterval(function () {
       }
     }
   };
-}, 1000);
+}
+
+function startTimer(timerDuration, timerLabel) {
+  var timerInterval = setInterval(function () {
+    timerDuration -= 1000;
+
+    var minutes = Math.floor((timerDuration % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timerDuration % (1000 * 60)) / 1000);
+
+    minutes = minutes > 9 ? minutes : `0${minutes}`;
+    seconds = seconds > 9 ? seconds : `0${seconds}`;
+
+    timerLabel.innerHTML = `Time left: <label class ="timerDigits">${minutes}:${seconds}</label>`;
+    updateLeaderboard();
+
+    if (timerDuration < 0) {
+      clearInterval(timerInterval);
+      timerLabel.innerHTML = "Time's up!";
+
+      let fireworksParticles = document.getElementById("tsparticles");
+      fireworksParticles.classList.remove("hide");
+    }
+  }, 1000);
+}
+
+function main() {
+  let startButton = document.getElementById("start-button");
+  let timerLabel = document.getElementById("timerLabel");
+
+  startButton.addEventListener("click", function () {
+    startButton.classList.add("hide");
+    timerLabel.classList.remove("hide");
+
+    startTimer(1.5 * 60 * 1000, timerLabel);
+  });
+}
+
+main();
