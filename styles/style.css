@@ -84,6 +84,16 @@ iframe {
   font-weight: bold;
 }
 
+.timer-menu {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  transform: translateY(25%);
+}
+
 .buttons-menu {
   display: flex;
   flex-direction: column;
@@ -92,6 +102,16 @@ iframe {
   align-items: center;
 
   transform: translateY(25%);
+}
+
+.timer-option {
+  background-color: rgb(110, 110, 110);
+  border-radius: 20%;
+  font-size: 2vh;
+
+  text-align: center;
+
+  width: 12.5vw;
 }
 
 .action-button {
