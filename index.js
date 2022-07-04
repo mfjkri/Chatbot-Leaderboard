@@ -172,13 +172,22 @@ function main() {
 
   let startButton = document.getElementById("start-button");
   let timerLabel = document.getElementById("timerLabel");
+  let timerInput = document.getElementById("timer-input");
+
+  let cachedInput = localStorage.getItem("previousInput");
+  timerInput.value = cachedInput ? cachedInput : 60;
 
   startButton.addEventListener("click", function () {
     startButton.classList.add("hide");
     resetButton.classList.add("hide");
+    timerInput.classList.add("hide");
+
     timerLabel.classList.remove("hide");
 
-    startTimer(60, timerLabel);
+    let newInput = parseFloat(timerInput.value);
+    localStorage.setItem("previousInput", newInput);
+
+    startTimer(newInput, timerLabel);
   });
 }
 
