@@ -162,6 +162,12 @@ function startTimer(timerDuration, timerLabel) {
 }
 
 function main() {
+  let csaLogo = document.getElementById("csaLogo");
+
+  csaLogo.addEventListener("click", function () {
+    localStorage.clear();
+  });
+
   let startButton = document.getElementById("start-button");
   let timerLabel = document.getElementById("timerLabel");
 
