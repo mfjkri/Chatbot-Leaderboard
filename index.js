@@ -125,11 +125,25 @@ function updateLeaderboard() {
 }
 
 function startTimer(timerDuration, timerLabel) {
-  var timerInterval = setInterval(function () {
+  let nowTime = new Date().getTime();
+
+  let cachedTimer = localStorage.getItem("endtime");
+  let endTime;
+
+  if (cachedTimer) {
+    endTime = new Date(parseInt(cachedTimer)).getTime();
+  } else {
+    endTime = new Date(nowTime + timerDuration * 60000).getTime();
+    localStorage.setItem("endtime", endTime);
+  }
+
+  timerDuration = endTime - nowTime;
+
+  let timerInterval = setInterval(function () {
     timerDuration -= 1000;
 
-    var minutes = Math.floor((timerDuration % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timerDuration % (1000 * 60)) / 1000);
+    let minutes = Math.floor((timerDuration % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timerDuration % (1000 * 60)) / 1000);
 
     minutes = minutes > 9 ? minutes : `0${minutes}`;
     seconds = seconds > 9 ? seconds : `0${seconds}`;
@@ -155,7 +169,7 @@ function main() {
     startButton.classList.add("hide");
     timerLabel.classList.remove("hide");
 
-    startTimer(60 * 60 * 1000, timerLabel);
+    startTimer(1.5, timerLabel);
   });
 }
 
