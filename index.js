@@ -148,7 +148,9 @@ function startTimer(timerDuration, timerLabel) {
     minutes = minutes > 9 ? minutes : `0${minutes}`;
     seconds = seconds > 9 ? seconds : `0${seconds}`;
 
-    timerLabel.innerHTML = `Time left: <label class ="timerDigits">${minutes}:${seconds}</label>`;
+    timerLabel.innerHTML = `Time left: ${
+      minutes == 0 ? "<label class ='lowTime'>" : ""
+    }${minutes}:${seconds}</label>`;
     updateLeaderboard();
 
     if (timerDuration < 0) {
@@ -162,9 +164,9 @@ function startTimer(timerDuration, timerLabel) {
 }
 
 function main() {
-  let csaLogo = document.getElementById("csaLogo");
+  let resetButton = document.getElementById("reset-button");
 
-  csaLogo.addEventListener("click", function () {
+  resetButton.addEventListener("click", function () {
     localStorage.clear();
   });
 
@@ -173,9 +175,10 @@ function main() {
 
   startButton.addEventListener("click", function () {
     startButton.classList.add("hide");
+    resetButton.classList.add("hide");
     timerLabel.classList.remove("hide");
 
-    startTimer(1.5, timerLabel);
+    startTimer(60, timerLabel);
   });
 }
 

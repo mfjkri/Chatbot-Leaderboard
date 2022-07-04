@@ -21,9 +21,12 @@
         <img class="logo-img" id="csaLogo" src="assets/csaLogo_transparent.png" alt="CSA" />
       </h2>
       <h2 class="subHeading timerString hide" id="timerLabel">
-        Time left: <label class ="timerDigits">00:00</label></class>
+        Time left: <label class="lowTime">00:00</label></class>
       </h2>
-      <button class="start-timer" id="start-button">Start</button>
+      <div class="buttons-menu">
+        <button class="action-button" id="start-button">Start</button>
+        <button class="action-button" id="reset-button">Reset</button>
+      </div>
     </header>
     <ul class="rank-list" id="rank-list"></ul>
     <img class="loader hide" src="../assets/loader.svg" />

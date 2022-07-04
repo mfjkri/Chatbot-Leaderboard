@@ -71,9 +71,8 @@ iframe {
   color: #1100ff;
 }
 
-.timerDigits {
-  color: #1100ff;
-  /* color: #ff0000; */
+.lowTime {
+  color: #ff0000;
 }
 
 .pausedText {
@@ -85,17 +84,26 @@ iframe {
   font-weight: bold;
 }
 
-.start-timer {
+.buttons-menu {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: center;
+
+  transform: translateY(25%);
+}
+
+.action-button {
   background-color: rgb(110, 110, 110);
   border-radius: 20%;
   font-size: 10vh;
 
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  transform: translateY(25%);
-  min-height: 50vh;
-  min-width: 50vw;
+
+  height: 20vh;
+  min-width: 25vw;
+  margin-bottom: 5vh;
 }
 
 .logo-img {
