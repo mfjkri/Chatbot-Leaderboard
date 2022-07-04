@@ -155,7 +155,7 @@ function main() {
     startButton.classList.add("hide");
     timerLabel.classList.remove("hide");
 
-    startTimer(1.5 * 60 * 1000, timerLabel);
+    startTimer(60 * 60 * 1000, timerLabel);
   });
 }
 
