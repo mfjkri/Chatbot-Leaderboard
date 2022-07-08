@@ -1,5 +1,3 @@
-let rank = 0;
-let lastScore = -1;
 let lastLeaderboardString = null;
 
 const body = document.querySelector(".body");
@@ -12,17 +10,10 @@ function safelyParseJSON(json) {
   let parsed;
   try {
     parsed = JSON.parse(json);
-  } catch (err) {}
-  return parsed;
-}
-
-function clearLeaderboard() {
-  rank = 0;
-  lastScore = -1;
-
-  while (rankList.firstChild) {
-    rankList.firstChild.remove();
+  } catch (err) {
+    console.log(err);
   }
+  return parsed;
 }
 
 function showLeaderboard() {
@@ -36,8 +27,18 @@ function hideLeaderboard() {
   clearLeaderboard();
 }
 
+function clearLeaderboard() {
+  while (rankList.firstChild) {
+    rankList.firstChild.remove();
+  }
+}
+
 function loadLeaderboard(placings) {
   clearLeaderboard();
+
+  let rank = 0;
+  let lastScore = -1;
+
   placings.forEach(function (placing, idx) {
     let username = placing.username;
     let points = placing.score;
